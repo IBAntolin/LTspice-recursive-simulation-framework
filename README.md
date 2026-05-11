@@ -80,7 +80,7 @@ python parsing_raw_files.py
 
 **Output:** Human-readable .txt files with high-precision time, V(output1), and V(output2) data.
 
-<u>Note:</u> V(output1) corresponds to the amplified output voltage and V(output2) to the shaper one.
+___Note:___ V(output1) corresponds to the amplified output voltage and V(output2) to the shaper one.
 
 **One-command Full Run (Windows CMD)**
 ```cmd
