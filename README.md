@@ -78,10 +78,11 @@ This script converts the binary .raw files into readable text files:
 python parsing_raw_files.py
 ```
 
-*Output:* Human-readable .txt files with high-precision time, V(output1), and V(output2) data.
-Note: V(output1) corresponds to the amplified output voltage and V(output2) to the shaper one.
+**Output:** Human-readable .txt files with high-precision time, V(output1), and V(output2) data.
 
-*One-command Full Run (Windows CMD)*
+<u>Note:</u> V(output1) corresponds to the amplified output voltage and V(output2) to the shaper one.
+
+**One-command Full Run (Windows CMD)**
 ```cmd
 python fixing_txt_files.py && python write_raw_files.py && python parsing_raw_files.py
 
