@@ -82,6 +82,8 @@ python parsing_raw_files.py
 
 ___Note:___ V(output1) corresponds to the amplified output voltage and V(output2) to the shaper one.
 
+---
+
 **One-command Full Run (Windows CMD)**
 ```cmd
 python fixing_txt_files.py && python write_raw_files.py && python parsing_raw_files.py
