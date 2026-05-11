@@ -15,4 +15,43 @@ The workflow includes:
 - Parsing of LTspice `.raw` outputs into readable `.txt` data files
 - Example electronics chain using a CREMAT amplifier and shaper circuit in `.asc` format
 
-The project is intended for detector readout and front-end electronics studies, but it can be adapted for other purposes that also require recursive LTspice simulations.
+This repository was developed for automated simulations of detector front-end electronics using CREMAT amplifier and shaping circuits.
+
+The input signals originate from GARFIELD simulations of Fe55 X-ray interactions inside a spherical gaseous detector, producing multi-channel current waveforms that are processed and injected into LTspice for electronics response simulations.
+
+Although originally designed for gaseous detector studies, the framework can be adapted for other applications requiring recursive or batch LTspice simulations with externally generated input signals.
+
+## LTspice Requirements
+This environment assumes that:
+
+- `LTspice.exe`
+- `cremat_eval_board.asc`
+-  folder with input files
+
+are located in the same directory as the Python scripts.
+
+The LTspice executable path is currently hardcoded in the scripts as:
+
+```python
+exe_path = os.path.join(base_dir, "LTspice.exe")
+
+## Step-by-Step Execution
+1. Prepare Input Files
+
+Place your raw event files in the folder:
+- **`1bar_indiv_readout_fe55_pwl/`**
+
+Files should be named `pwl_0.txt`, `pwl_1.txt`, `pwl_2.txt`, ... and contain **12 columns** (time + 11 channels), space-separated.
+
+---
+
+2. Run `fixing_txt_files.py`
+
+This script processes the raw events:
+- Splits each event into individual channels
+- Scales current values by ×1000
+- Adds a final zero-current step (required for LTspice PWL)
+- Creates one processed file per channel
+
+```bash
+python fixing_txt_files.py
