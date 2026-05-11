@@ -69,7 +69,7 @@ This script performs the actual LTspice simulations:
 
 ```bash
 python write_raw_files.py
-´´´
+```
 
 4. Run parsing_raw_files.py
 
