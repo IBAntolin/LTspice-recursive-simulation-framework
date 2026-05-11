@@ -56,6 +56,8 @@ This script processes the raw events:
 
 ```bash
 python fixing_txt_files.py
+```
+
 
 3. Run write_raw_files.py
 
@@ -67,12 +69,14 @@ This script performs the actual LTspice simulations:
 
 ```bash
 python write_raw_files.py
+´´´
 
 4. Run parsing_raw_files.py
 
 This script converts the binary .raw files into readable text files:
 ```bash
-Bashpython parsing_raw_files.py
+python parsing_raw_files.py
+```
 
 *Output:* Human-readable .txt files with high-precision time, V(output1), and V(output2) data.
 Note: V(output1) corresponds to the amplified output voltage and V(output2) to the shaper one.
